@@ -19,6 +19,7 @@ Connect to instance using terminal
 Use:- curl http://169.254.169.254/latest/metadata/NAMEOFTHEMETADATA
 
 ### Create a docker in AWS(in this case it is MongoDb/Neo4J GraphDatabase):-
+![image](https://user-images.githubusercontent.com/39455725/170764781-4984691d-cc16-4d18-b913-2bb1bdf0689e.png)
 What is docker? Docker is a containerisation service on which we can host our apps instead of creating seperate servers. On AWS it is done using ECS(Elastic Containers Service) where a cluster can contain multiple services which are basically tasks that we create, in Leyman terms Cluster consists of a task which contains a container(docker container) that will host the application.
 
 ### Create a task under task configuration where create a mongoldb container.
@@ -43,6 +44,7 @@ What is docker? Docker is a containerisation service on which we can host our ap
 - Default output format [None]: json
 
 ### Create Lambda function and trigger it using AWS SQS:-
+![image](https://user-images.githubusercontent.com/39455725/170765002-455b99b5-ac39-42d7-8c6d-d8e84818c35a.png)
 - Create a role in IAM with access to Lambda and select permissions mentioned above.
 - Create a basic SQS queue.
 - Create a lambda function selecting nodes as runtime and select user roles where select the newly created role and create the function.
