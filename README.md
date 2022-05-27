@@ -38,8 +38,8 @@ What is docker? Docker is a containerisation service on which we can host our ap
 - Install AWS CLI in the system and install AWS-SDK in nodes project.
 - Navigate to AWS user credentials page and get user ACCESS_KEY_ID, SECRET_ACCESS_KEY
 - Add both of these in .env file, after this go to terminal(cmd in windows) and type $ aws configure
-- AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
-- AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+- AWS Access Key ID [None]: XXXXXXXXXXXXXXXXXX
+- AWS Secret Access Key [None]: XXXXXXXXXXXXXXXXXX
 - Default region name [None]: us-east-1
 - Default output format [None]: json
 
