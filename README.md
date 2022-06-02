@@ -66,3 +66,7 @@ Curl/install aws-sdk latest version mentioned on the website:-
 - Create a user with permission of amplify-admin or add policy of admplify-admin to an existing user.
 - Provide ACCESS_KEY_ID & SECRET_KEY for the same user.
 - Add profile name or select default
+
+### AWS-Location services inside amplify app
+- use the following link to get along with the steps and procedures.
+https://github.com/HR199812/amplify-maps
