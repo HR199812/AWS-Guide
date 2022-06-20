@@ -28,6 +28,10 @@ Note:- While creating an EC2 machine remember to create a new key pair in case y
 - Right Click on the EC2 machine you've and select "Image and Templates" inside which select create an Image.
 - Give your image and description.
 
+### What is an Elastic-IP?
+Whenever you create a machine it has a public IP address which will change in case of machine stop and start. To keep it same always we use an IP that don't change in such scenarios.
+For More:- https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html
+
 ### Create a docker in AWS(in this case it is MongoDb/Neo4J GraphDatabase):-
 
 ![image](https://user-images.githubusercontent.com/39455725/170764781-4984691d-cc16-4d18-b913-2bb1bdf0689e.png)
