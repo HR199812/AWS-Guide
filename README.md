@@ -29,15 +29,23 @@ Note:- While creating an EC2 machine remember to create a new key pair in case y
 - Give your image and description.
 
 ### What is an Elastic-IP?
-Whenever you create a machine it has a public IP address which will change in case of machine stop and start. To keep it same always we use an IP that don't change in such scenarios.
+Whenever you create a machine it has a public IP address which will change in case of machine stop and start. To keep it same always we use an Elastic IP with a little upper-hand cost ans this IP that don't change in such scenarios. This IP is reserved for you until you release it, afteer which you no longer will have the same IP but will get a new Elastic IP.
 For More:- https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html
 
-### Create a docker in AWS(in this case it is MongoDb/Neo4J GraphDatabase):-
+### Placement Groups:-
+Three Types of PG are there:-
+- Cluster: All the instances are present in one Region, one AZ in same server rack(this gives you an upper hand to ask amazon to configure your rack according to your needs. Note: Only for this type of PG).
+- Partition: All the instances are present in one Region, in muliple AZ in different server rack, may se some of them are in same rack and some in different racks.
+- Spread: All the instances are present in one Region are spread accross different racks in different AZ.
 
+### VPC(Virtual Private Cloud):-
+
+
+### Create a docker in AWS(in this case it is MongoDb/Neo4J GraphDatabase):-
 ![image](https://user-images.githubusercontent.com/39455725/170764781-4984691d-cc16-4d18-b913-2bb1bdf0689e.png)
 What is docker? Docker is a containerisation service on which we can host our apps instead of creating seperate servers. On AWS it is done using ECS(Elastic Containers Service) where a cluster can contain multiple services which are basically tasks that we create, in Leyman terms Cluster consists of a task which contains a container(docker container) that will host the application.
 
-### Create a task under task configuration where create a mongoldb container.
+### Create a task under task configuration where create a mongodb container.
 
 - To create a container we need an image which can be found at hub.docker.com=>Search (Image name)=> copy image name from “docker pull image”
 - Add port number of the respective database, In case of MongoDb use 27017, in case of Neo4J use 7474.
