@@ -25,23 +25,76 @@ Use:- curl http://169.254.169.254/latest/metadata/NAMEOFTHEMETADATA
 Note:- While creating an EC2 machine remember to create a new key pair in case you don't have old ones and keep them safe as they will be used to connect to the machine.
 
 ### Creating Custom AMI/Image:-
+
 - Right Click on the EC2 machine you've and select "Image and Templates" inside which select create an Image.
 - Give your image and description.
 
 ### What is an Elastic-IP?
+
 Whenever you create a machine it has a public IP address which will change in case of machine stop and start. To keep it same always we use an Elastic IP with a little upper-hand cost ans this IP that don't change in such scenarios. This IP is reserved for you until you release it, afteer which you no longer will have the same IP but will get a new Elastic IP.
 For More:- https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html
 
 ### Placement Groups:-
+
 Three Types of PG are there:-
+
 - Cluster: All the instances are present in one Region, one AZ in same server rack(this gives you an upper hand to ask amazon to configure your rack according to your needs. Note: Only for this type of PG).
 - Partition: All the instances are present in one Region, in muliple AZ in different server rack, may se some of them are in same rack and some in different racks.
 - Spread: All the instances are present in one Region are spread accross different racks in different AZ.
 
+### AWS S3:-
+
+To Create a bucket:
+
+- Go to S3 dashboard and click on create new bucket.
+- Give name to your bucket and enable ACL's in case you want to connect to S3 using NodeJs and Lambda.
+- To connect to S3 using NodeJs install AWS-SDK into you NodeJs Project and use the following code to push files to S3.
+
+```
+const fs = require("fs");
+const AWS = require("aws-sdk");
+const s3 = new AWS.S3();
+
+// const upload = async () => {
+//   const params = {
+//     ACL: "public-read",
+//     Body: "hello world",
+//     ContentType: "text/html",
+//     Bucket: "test-bucket-for-demo",
+//     Key: "file-from-lambda.txt",
+//   };
+// }
+
+//   In Case if we have a file the
+const fileName = "test.js";
+const upload = async () => {
+  const params = {
+    ACL: "public-read",
+    Body: await fs.readFileSync(`./${fileName}`),
+    ContentType: "text/html",
+    Bucket: "test-bucket-for-demo",
+    Key: fileName,
+  };
+
+  return await new Promise((resolve, reject) => {
+    s3.putObject(params, (err, results) => {
+      if (err) reject(err);
+      else resolve(results);
+    });
+  });
+};
+
+const main = async (event) => {
+  console.log("Event:", event);
+  return upload();
+};
+exports.handler = main;
+```
+
 ### VPC(Virtual Private Cloud):-
 
-
 ### Create a docker in AWS(in this case it is MongoDb/Neo4J GraphDatabase):-
+
 ![image](https://user-images.githubusercontent.com/39455725/170764781-4984691d-cc16-4d18-b913-2bb1bdf0689e.png)
 What is docker? Docker is a containerisation service on which we can host our apps instead of creating seperate servers. On AWS it is done using ECS(Elastic Containers Service) where a cluster can contain multiple services which are basically tasks that we create, in Leyman terms Cluster consists of a task which contains a container(docker container) that will host the application.
 
