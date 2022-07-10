@@ -98,6 +98,8 @@ A VPC is used to group your resources in an isolated section, where your resourc
 
 ### Route Table:-
 A route tabe is a rule book which governs what all IP's are meant to go out and come inside the network by maintaining Inbound and Outbound rules. 
+**Blackhole:-**
+> A route not pointing to any resource and lying around freely is called a blackhole.
 
 ### Create a docker in AWS(in this case it is MongoDb/Neo4J GraphDatabase):-
 
