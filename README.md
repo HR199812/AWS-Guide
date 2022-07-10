@@ -1,4 +1,5 @@
 ## A text file containing AWS steps and procedures for everyone who wants to learn AWS or may be keep community updated with specific services and how to set them up for your need
+Mail me on: hritwik72@gmail.com if you want edit access.
 
 Anyone who wants to share there knowledge are free to contribute.
 
@@ -92,6 +93,11 @@ exports.handler = main;
 ```
 
 ### VPC(Virtual Private Cloud):-
+A VPC is used to group your resources in an isolated section, where your resources can be from different  AZ's in same region. To work with VPC's in different regions read:- https://docs.aws.amazon.com/devicefarm/latest/developerguide/amazon-vpc-cross-region.html.
+
+
+### Route Table:-
+A route tabe is a rule book which governs what all IP's are meant to go out and come inside the network by maintaining Inbound and Outbound rules. 
 
 ### Create a docker in AWS(in this case it is MongoDb/Neo4J GraphDatabase):-
 
