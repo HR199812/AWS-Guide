@@ -29,7 +29,7 @@ Use:- curl http://169.254.169.254/latest/metadata/NAMEOFTHEMETADATA
 
 Note:- While creating an EC2 machine remember to create a new key pair in case you don't have old ones and keep them safe as they will be used to connect to the machine.
 
-### Creating Custom AMI/Image:-
+### Creating Custom AMI(Amzaon Machine Image)/Image:-
 
 - Right Click on the EC2 machine you've and select "Image and Templates" inside which select create an Image.
 - Give your image and description.
@@ -103,7 +103,17 @@ A VPC is used to group your resources in an isolated section, where your resourc
 ### Route Table:-
 
 A route tabe is a rule book which governs what all IP's are meant to go out and come inside the network by maintaining Inbound and Outbound rules.
-**Blackhole:-**
+**Blackhole:- When a route in Route Table is not pointing to any resource then it becomes a blackhole route.**
+
+### Load Balancers:-
+
+Load Balancers are used to distribute data amongst difference machines when the load is more than exepected load. The load amongst machines is distributed in so called "Target Groups".
+**Target Groups:** Collections of EC2 machines grouped together to distribute the load amongst machines.
+
+Two types of TG's:-
+
+- **Application Load Balancers**:- This type of load balancer works on http/https/ssh protocol. It is used to distribute traffic of the application among different machines(EC2 machines) and uses a "Round Robin Alogrithm" for load distribution in the background. Machines can be in differenr AZ's and multiple targets.
+- **Network Load Balancers**:- This type of load balancer works on tcp protocol. It is used to distribute traffic of the application among different machines to increase throughput and ensure low latency.
 
 > A route not pointing to any resource and lying around freely is called a blackhole.
 
