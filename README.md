@@ -52,8 +52,22 @@ Three Types of PG are there:-
 To Create a bucket:
 
 - Go to S3 dashboard and click on create new bucket.
+- ACL enabling let's you edit access rules of S3 bucket through UI of ACL list permissions. If you've not enabled ACL then in that case you're the owner of the bucket and have to manage access thru S3 policies.
+- Content level policies can be given thru permissions of each bucket object.
 - Give name to your bucket and enable ACL's in case you want to connect to S3 using NodeJs and Lambda.
+- To host a static website using S3 enable static website hosting, also enable access rules of CRUD operations of your build/html page.
+- Using route 53 we can associate the html page ARN with our domain to access the webpage using the Domain which will redirect the routes internally and open the webpage.
 - To connect to S3 using NodeJs install AWS-SDK into you NodeJs Project and use the following code to push files to S3.
+
+### S3 Bucket Types:-
+1. Amazon S3 Standard (S3 Standard)
+2. Amazon S3 Intelligent-Tiering (S3 Intelligent-Tiering)
+3. Amazon S3 Standard-Infrequent Access (S3 Standard-IA)
+4. Amazon S3 One Zone-Infrequent Access (S3 One Zone-IA)
+5. Amazon S3 Glacier Instant Retrieval
+6. Amazon S3 Glacier Deep Archive
+7. S3 on Outposts
+For more info:- https://aws.amazon.com/s3/storage-classes/
 
 ```
 const fs = require("fs");
@@ -115,7 +129,10 @@ Two types of TG's:-
 - **Application Load Balancers**:- This type of load balancer works on http/https/ssh protocol. It is used to distribute traffic of the application among different machines(EC2 machines) and uses a "Round Robin Alogrithm" for load distribution in the background. Machines can be in differenr AZ's and multiple targets.
 - **Network Load Balancers**:- This type of load balancer works on tcp protocol. It is used to distribute traffic of the application among different machines to increase throughput and ensure low latency.
 
-> A route not pointing to any resource and lying around freely is called a blackhole.
+**Auto Scaling Groups**:- ASG's help to create a group of EC2 instances which have a minimum number of machines and a maximum number of machines that it can scale up to horizontaly and scaled down to minimum number of instances.
+If in case number of EC2 instance get's less than the minimum threshold then ASG automatically spins off a new EC2 machine.
+
+### S3 
 
 ### Create a docker in AWS(in this case it is MongoDb/Neo4J GraphDatabase):-
 
