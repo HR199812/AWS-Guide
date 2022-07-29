@@ -49,7 +49,7 @@ Three Types of PG are there:-
 
 ### AWS S3:-
 
-To Create a bucket:
+**To Create a bucket**:-
 
 - Go to S3 dashboard and click on create new bucket.
 - ACL enabling let's you edit access rules of S3 bucket through UI of ACL list permissions. If you've not enabled ACL then in that case you're the owner of the bucket and have to manage access thru S3 policies.
@@ -58,6 +58,8 @@ To Create a bucket:
 - To host a static website using S3 enable static website hosting, also enable access rules of CRUD operations of your build/html page.
 - Using route 53 we can associate the html page ARN with our domain to access the webpage using the Domain which will redirect the routes internally and open the webpage.
 - To connect to S3 using NodeJs install AWS-SDK into you NodeJs Project and use the following code to push files to S3.
+- To generate logs of what is happening in the bucket create another bucket and in the current bucket add enable accessing server logs.
+- To generate notifications create event notifications for the bucket inside the properties. 
 
 ### S3 Bucket Types:-
 1. Amazon S3 Standard (S3 Standard)
@@ -70,7 +72,7 @@ To Create a bucket:
 For more info:- https://aws.amazon.com/s3/storage-classes/
 
 
-**Code for S3 access using JS code :-**
+**Code for S3 access using JS code**:-
 ```
 const fs = require("fs");
 const AWS = require("aws-sdk");
