@@ -69,6 +69,8 @@ To Create a bucket:
 7. S3 on Outposts
 For more info:- https://aws.amazon.com/s3/storage-classes/
 
+
+**Code for S3 access using JS code :-**
 ```
 const fs = require("fs");
 const AWS = require("aws-sdk");
