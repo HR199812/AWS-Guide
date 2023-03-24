@@ -138,6 +138,22 @@ If in case number of EC2 instance get's less than the minimum threshold then ASG
 
 ### S3 
 
+
+### Event Bridge:
+Event Driven Architecture helps developers to create a loosely-coupled architecture and also can help in acheiving microservices architure for a revamping a monolithic application or creating an application with microservices acting independently of each other.
+
+Decoupled application can allow for more seamless team collaboration accross applications.
+
+It consist of:
+- Event Source: It is the application or service which is producing events. Can be one of the following or all: AWS Service, Custom Events, and SaaS App.
+- Event Bus: Events are placed on events bus which then checks event rules that defines which target will be consuming an incoming event. It is of three types: Default, Custom, SaaS. 
+- Event Targets: It is what consuming the event being sourced in the bus.
+- Rules: Rules define which event to be sent to what kind of consumer as there can be tens,hundreds, and thousands of events consumed by event bridge.
+
+- **Event**:- An event is something that will happen in your application, for eg: orderPlaced, itemPlacedInCart, etc. It contains JSON of what happened in your application.
+
+- **Schemas in Event bridge** :- Schemas help in differentiating where the event came from as it contains{timestamp, structur of event, and where it came from} Schemas help developers develop applications based on the event to be consumed from the event bridge, also it helps schema creators to create schemas for AWS events(services), discovered schema, and custom schema.
+
 ### Create a docker in AWS(in this case it is MongoDb/Neo4J GraphDatabase):-
 
 ![image](https://user-images.githubusercontent.com/39455725/170764781-4984691d-cc16-4d18-b913-2bb1bdf0689e.png)
