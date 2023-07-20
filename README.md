@@ -215,3 +215,37 @@ Curl/install aws-sdk latest version mentioned on the website:-
 
 - use the following link to get along with the steps and procedures.
   https://github.com/HR199812/amplify-maps
+
+### Hosting an App on amplify
+
+- Click new app and select host web app.
+- Select version source control type you want to use.
+- Select repo and branch for which you want to deploy the app.
+- Inside build and test add paths to app libraries, app-root path as app root directory path, and build commands to run and build your app.
+- In advnaced settings you can add envrionment variables required for the app, add version of tech on which your app will run.
+- You can also use a docker image if you want.
+- Click next, on review page review your settings and then complete the creation.
+- First deployment will be triggered automatically.
+
+# In my case I build an app for next js and therefore the code looks like this:
+```
+version: 1
+applications:
+  - frontend:
+      phases:
+        preBuild:
+          commands:
+            - npm i --force
+        build:
+          commands:
+            - npm run build
+      artifacts:
+        baseDirectory: .next
+        files:
+          - '**/*'
+      cache:
+        paths:
+          - node_modules/**/*
+    appRoot: nike/shoe-carousel-3d/
+```
+
