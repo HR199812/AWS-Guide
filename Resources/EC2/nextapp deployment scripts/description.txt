@@ -1,0 +1,1 @@
+Here in the scripts we're spinning off two applications on same EC2 machine.
