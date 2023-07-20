@@ -1,0 +1,3 @@
+Host the following code for your lambda function to some version source control platform.
+Connect aws codebuild with the repo and select the trigger as PUSH [ This indicates that whenever a push is made to the repo, code build will execute].
+This will automatically update your aws lambda function.
