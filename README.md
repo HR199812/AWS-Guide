@@ -248,4 +248,3 @@ applications:
           - node_modules/**/*
     appRoot: nike/shoe-carousel-3d/
 ```
-
